@@ -1,0 +1,21 @@
+{% extends 'myApp/base.html' %}
+    {% block body_block %}
+    {% load static %}
+
+
+        <button id="getLocationBtn" style="width: 300px;">
+            CLICK ME
+        </button>
+
+  <script>
+    
+    var csrfToken = '{{ csrf_token }}';
+  </script>
+<script src="{% static 'myApp/home.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+     
+
+
+
+
+{% endblock %}

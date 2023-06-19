@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="navbar">
+    <nav>
+        {% if user.is_superuser %}
+            <a href="{% url 'manager' %}">Manage</a>
+            <a href="{% url 'signout' %}">Sign Out</a>
+
+        
+        {% elif user.is_authenticated %}
+        <a href="{% url 'signout' %}">Sign Out</a>
+        <a href="{% url 'requestHelp' %}">Request Towing</a>
+        {% else %}
+        <a href="{% url 'register' %}">SignUp</a>
+        <a href="{% url 'login' %}">Login</a>
+        
+        {% endif %}
+        
+    </nav>
+</div>
+
+{% block body_block %}
+
+
+
+{% endblock body_block %}
+
+
+
+
+
+
+    
+</body>
+</html>

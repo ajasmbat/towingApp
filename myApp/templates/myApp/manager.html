@@ -1,0 +1,28 @@
+
+
+    {% extends 'myApp/base.html' %}
+    {% block body_block %}
+    {% load static %}
+
+     <meta name="vapid-key" content="{{ vapid_key }}">
+     {% if user.id %}
+        <meta name="user_id" content="{{ user.id }}">
+    {% endif %}
+
+    {% for obj in objects %}
+            <li><a href="{% url 'view_help' obj.id %}">{{obj}}</a>
+            
+                <p>{{obj.created_time}}</p>
+            </li>
+            
+            <!-- Add more attributes as needed -->
+        {% endfor %}
+
+
+
+
+
+<script src="{% static 'myApp/registerSw.js' %}"></script>
+<script src="{% static 'myApp/sw.js' %}"></script>
+
+{% endblock %}

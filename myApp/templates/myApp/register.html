@@ -1,0 +1,40 @@
+{% extends 'myApp/base.html' %}
+    {% block body_block %}
+    {% load static %}
+
+     
+<form method="post" onsubmit="removeNonNumeric()">
+    {% csrf_token %}
+    {% for field in form %}
+
+    <p>{{field.label}}
+       </p>
+
+        <p> {{field}}</p>
+      
+
+  {% endfor %}
+
+{% for field in form %}
+    
+      {% if field.errors %}
+          {% for error in field.errors %}
+            <li>{{ error }}</li>
+          {% endfor %}
+    
+      {% endif %}
+      
+  {% endfor %}
+
+  
+    </div>
+    <button type="submit">Login</button>
+</form>
+
+
+
+<script src="{% static 'myApp/max.js' %}"></script>
+
+{% endblock %}
+
+
