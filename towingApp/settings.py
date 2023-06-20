@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-1wqwl=r41f6k#ujgt$l8d^kf%u0d^i!80471a*kkbdkbb5tj%-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['socialmediasolutions.biz','www.socialmediasolutions.biz']
 
 
 # Application definition
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "phonenumber_field",
     "myApp",
     'webpush',
 ]
